@@ -26,6 +26,9 @@ public class HttpUrls {
      */
     public static final String PANDA_HOME_LIST = "ajax_get_live_list_by_multicate";
 
+
+    public static final String PANDA_DOTA_LIST = "ajax_get_live_list_by_cate";
+
     /*****************************************
      * 请求返回码
      ***************************************************/

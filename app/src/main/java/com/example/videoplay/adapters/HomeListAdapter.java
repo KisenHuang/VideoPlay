@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.videoplay.R;
+import com.example.videoplay.model.Dota2Info;
 import com.example.videoplay.model.HomePagerData;
 import com.example.videoplay.views.recyclerload.ERecyclerView;
 import com.example.videoplay.views.recyclerload.WrapperRecyclerView;
@@ -15,7 +16,7 @@ import com.example.videoplay.views.recyclerload.WrapperRecyclerView;
  * @author Huangwy
  * @TIME 2016/3/13 12:38
  */
-public class HomeListAdapter extends ERecyclerView.AutoLoadAdapter<HomePagerData> {
+public class HomeListAdapter extends ERecyclerView.AutoLoadAdapter<Dota2Info> {
 
     public HomeListAdapter(Context context) {
         super(context);
