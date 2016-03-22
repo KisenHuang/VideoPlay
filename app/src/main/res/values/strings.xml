@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VideoPlay</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="my_setting">设置</string>
+
+    <!-- **************************************** -->
+    <string name="empty_words">暂无数据</string>
+    <string name="str_loading">正在加载数据</string>
+</resources>

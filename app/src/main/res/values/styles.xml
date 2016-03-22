@@ -1,0 +1,89 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:listViewStyle">@style/ListViewStyle</item>
+        <item name="PagerIndicatorStyle">@style/pagerIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/vpiTabPageIndicatorStyle</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/bg_color_gray</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="AnimationActivity" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/base_slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/transition_out</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@anim/base_slide_right_out</item>
+    </style>
+
+    <!-- listview样式 -->
+    <style name="ListViewStyle" parent="Widget.AppCompat.ListView">
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:divider">@color/divider</item>
+    </style>
+    slider indicator样式
+
+    <style name="pagerIndicator">
+        <item name="selected_drawable">@drawable/dotselected</item>
+        <item name="unselected_drawable">@drawable/dotunselected</item>
+    </style>
+
+    <style name="circleIndicatorStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fillColor">@android:color/white</item>
+        <item name="pageColor">@android:color/transparent</item>
+        <item name="strokeColor">@android:color/white</item>
+        <item name="radius">5dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="centered">true</item>
+        <item name="snap">false</item>
+    </style>
+
+    <style name="vpiTabPageIndicatorStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:paddingLeft">22dip</item>
+        <item name="android:paddingRight">22dip</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@drawable/selector_home_type_textcolor</item>
+    </style>
+
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+    <style name="TextViewStyle" parent="TextView.DefaultStyle">
+        <item name="android:textStyle">italic|bold</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="button_style">
+        <item name="android:height">@dimen/optionHeight</item>
+        <item name="android:textSize">@dimen/size_15</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_button_text</item>
+        <item name="android:gravity">center|left</item>
+    </style>
+
+</resources>

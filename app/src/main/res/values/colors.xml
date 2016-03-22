@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- themeColor-->
+    <color name="colorPrimary">#2BBBE0</color>
+    <color name="colorPrimaryDark">#1a9dbe</color>
+    <color name="colorAccent">#9d3bff</color>
+
+
+    <!-- textColor-->
+    <color name="theme_blue">@color/colorPrimary</color>
+    <color name="center_blue">#54d8fa</color>
+    <color name="tint_blue">#c3ebf9</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#1a1919</color>
+    <color name="transparent_black">#701a1919</color>
+    <color name="transparent_black_l">#70312e2e</color>
+    <color name="gray">#312e2e</color>
+    <color name="hint_gray">#5a5a5a</color>
+    <color name="gray_tab">#8B8B8B</color>
+    <color name="bg_color">#e1e0e0</color>
+
+    <!-- backgroundColor-->
+    <color name="bg_color_gray">#ececec</color>
+    <color name="divider">@color/bg_color_gray</color>
+    <color name="textcolor_green">#77a77a</color>
+    <color name="textcolor_wish_gray">@color/bg_color_gray</color>
+
+</resources>
