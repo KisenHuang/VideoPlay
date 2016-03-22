@@ -2,6 +2,7 @@ package com.example.videoplay.activities.news;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ public class NewsDetailsActivity extends BaseActivity implements View.OnClickLis
     private FrameLayout title_layout;
     private TextView title;
     private ImageView back;
+    private boolean isVideoViewPopShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +65,30 @@ public class NewsDetailsActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.back:
                 hideCustomView();
+                setTitleLayoutVisible();
                 break;
             case R.id.video:
-                title_layout.setVisibility(View.VISIBLE);
+                setTitleLayoutVisible();
                 break;
         }
+    }
+
+    public void setTitleLayoutVisible() {
+        if (isVideoViewPopShow) {
+            isVideoViewPopShow = !isVideoViewPopShow;
+            title_layout.setVisibility(View.GONE);
+        } else {
+            isVideoViewPopShow = !isVideoViewPopShow;
+            title_layout.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void setTitleLayoutGone() {
+        isVideoViewPopShow = false;
+        title_layout.setVisibility(View.GONE);
     }
 
     private void loadWeb(String newsUrl) {
@@ -120,6 +138,8 @@ public class NewsDetailsActivity extends BaseActivity implements View.OnClickLis
         public void onShowCustomView(View view, CustomViewCallback callback) {
             full(true);
             view.setId(R.id.video);
+            view.setOnClickListener(NewsDetailsActivity.this);
+            setTitleLayoutVisible();
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             mWebView.setVisibility(View.INVISIBLE);
             // 如果一个视图已经存在，那么立刻终止并新建一个
@@ -198,7 +218,10 @@ public class NewsDetailsActivity extends BaseActivity implements View.OnClickLis
 
     class DetailsWebViewClient extends WebViewClient {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//            view.loadUrl(url);
+            if (!TextUtils.equals("http://app.dota2.com.cn/", url)) {
+                url = UIUtils.checkUrl(url);
+                view.loadUrl(url);
+            }
             return true;
         }
 
@@ -215,14 +238,14 @@ public class NewsDetailsActivity extends BaseActivity implements View.OnClickLis
     }
 
     @Override
-    public void onPause() {// 继承自Activity
+    public void onPause() {
         super.onPause();
         mWebView.onPause();
         mWebView.pauseTimers();
     }
 
     @Override
-    public void onResume() {// 继承自Activity
+    public void onResume() {
         super.onResume();
         mWebView.onResume();
         mWebView.resumeTimers();
