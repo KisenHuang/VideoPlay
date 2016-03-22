@@ -52,7 +52,6 @@ public class NewsFragment extends BaseListFragment {
         switch (reqcode) {
             case HttpUrls.REQ_CODE_REFRESH:
                 mAdapter.clear();
-                List<NewsData> newsDataList = JSON.parseArray(JSON.parseObject(data).getString("data"), NewsData.class);
             case HttpUrls.REQ_CODE_LOAD:
                 List<NewsData> newsDatas = JSON.parseArray(JSON.parseObject(data).getString("data"), NewsData.class);
                 mAdapter.addAll(newsDatas);
@@ -68,7 +67,6 @@ public class NewsFragment extends BaseListFragment {
                 .url(HttpUrl.parse(HttpUrls.makeUrl(HttpUrls.DOTA2_NEWS, param)))
                 .build();
         handlerNet(request, HttpUrls.REQ_CODE_LOAD);
-        LogUtil.e("newFragment", "onLoad");
     }
 
     @Override

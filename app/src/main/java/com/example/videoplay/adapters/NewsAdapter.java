@@ -19,20 +19,20 @@ import java.util.List;
  * @author Huangwy
  * @TIME 2016/3/16 19:27
  */
-public class NewsAdapter extends WrapperRecyclerView.AutoLoadAdapter<NewsData> {
+public class NewsAdapter extends ERecyclerView.AutoLoadAdapter<NewsData> {
 
     public NewsAdapter(Context context) {
         super(context);
     }
 
     @Override
-    public WrapperRecyclerView.ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
+    public ERecyclerView.ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.listitem_news, parent, false);
         return new NewsHolder(view);
     }
 
     @Override
-    public void getView(WrapperRecyclerView.ItemClickViewHolder holder, int position, int viewType) {
+    public void getView(ERecyclerView.ItemClickViewHolder holder, int position, int viewType) {
         if (viewType == ERecyclerView.TYPE_NORMAL) {
             NewsHolder newsHolder = (NewsHolder) holder;
             NewsData newsData = mList.get(position);
@@ -43,7 +43,7 @@ public class NewsAdapter extends WrapperRecyclerView.AutoLoadAdapter<NewsData> {
         }
     }
 
-    class NewsHolder extends WrapperRecyclerView.ItemClickViewHolder {
+    class NewsHolder extends ERecyclerView.ItemClickViewHolder {
 
         public ImageView newsIcon;
         public TextView newsTitle;

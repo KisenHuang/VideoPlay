@@ -15,7 +15,7 @@ import com.example.videoplay.R;
  */
 public class RecyclerLoadSupportEmptyLayout extends SwipeRefreshLayout {
 
-    private WrapperRecyclerView recycleView;
+    private ERecyclerView recycleView;
 
     private LinearLayoutManager layoutManager;
 
@@ -32,7 +32,7 @@ public class RecyclerLoadSupportEmptyLayout extends SwipeRefreshLayout {
      * @param attrs
      */
     private void createRecyclerView(Context context, AttributeSet attrs) {
-        recycleView = new WrapperRecyclerView(context, attrs);
+        recycleView = new ERecyclerView(context, attrs);
         recycleView.setId(android.R.id.list);
         recycleView.setOnScrollListener();
         layoutManager = new LinearLayoutManager(context);
@@ -63,7 +63,7 @@ public class RecyclerLoadSupportEmptyLayout extends SwipeRefreshLayout {
      * @param listener
      * @Description:
      */
-    public void setOnLoadListener(WrapperRecyclerView.OnLoadListener listener) {
+    public void setOnLoadListener(ERecyclerView.OnLoadListener listener) {
         recycleView.setOnLoadListener(listener);
     }
 
@@ -76,7 +76,7 @@ public class RecyclerLoadSupportEmptyLayout extends SwipeRefreshLayout {
      *
      * @param listener
      */
-    public void setOnItemClickListener(WrapperRecyclerView.OnItemClickListener listener) {
+    public void setOnItemClickListener(ERecyclerView.OnItemClickListener listener) {
         recycleView.setOnItemClickListener(listener);
     }
 
@@ -123,7 +123,7 @@ public class RecyclerLoadSupportEmptyLayout extends SwipeRefreshLayout {
         recycleView.setIsLoading(isLoading);
     }
 
-    public WrapperRecyclerView getRecycleView() {
+    public ERecyclerView getRecycleView() {
         return recycleView;
     }
 

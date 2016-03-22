@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.videoplay.views.recyclerload.RecyclerLoadSupportEmptyLayout;
-import com.example.videoplay.views.recyclerload.WrapperRecyclerView;
-import com.example.videoplay.views.recyclerload.WrapperRecyclerView.OnItemClickListener;
-import com.example.videoplay.views.recyclerload.WrapperRecyclerView.OnLoadListener;
+import com.example.videoplay.views.recyclerload.ERecyclerView;
+import com.example.videoplay.views.recyclerload.ERecyclerView.OnItemClickListener;
+import com.example.videoplay.views.recyclerload.ERecyclerView.OnLoadListener;
 
 /**
  * @author Huangwy
@@ -22,7 +22,7 @@ public abstract class BaseListFragment extends BaseFragment implements OnRefresh
     private View mEmptyView;
     protected TextView mEmptyTextView;
     protected RecyclerLoadSupportEmptyLayout mRecyclerview;
-    protected WrapperRecyclerView mList;
+    protected ERecyclerView mList;
     protected int mPage = 1;
 
     @Override
@@ -82,6 +82,7 @@ public abstract class BaseListFragment extends BaseFragment implements OnRefresh
 
     @Override
     public void onItemClick(View view, int position) {
+        position = position - mRecyclerview.getRecycleView().getHeaderCount();
         onListItemClick(view, position);
     }
 

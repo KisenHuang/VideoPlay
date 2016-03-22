@@ -8,30 +8,31 @@ import android.widget.ImageView;
 
 import com.example.videoplay.R;
 import com.example.videoplay.model.HomePagerData;
+import com.example.videoplay.views.recyclerload.ERecyclerView;
 import com.example.videoplay.views.recyclerload.WrapperRecyclerView;
 
 /**
  * @author Huangwy
  * @TIME 2016/3/13 12:38
  */
-public class HomeListAdapter extends WrapperRecyclerView.AutoLoadAdapter<HomePagerData> {
+public class HomeListAdapter extends ERecyclerView.AutoLoadAdapter<HomePagerData> {
 
     public HomeListAdapter(Context context) {
         super(context);
     }
 
     @Override
-    public WrapperRecyclerView.ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
+    public ERecyclerView.ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
         View item = LayoutInflater.from(context).inflate(R.layout.listitem_home, parent, false);
         return new HomeClickViewHolder(item);
     }
 
     @Override
-    public void getView(WrapperRecyclerView.ItemClickViewHolder holder, int position, int viewType) {
+    public void getView(ERecyclerView.ItemClickViewHolder holder, int position, int viewType) {
 
     }
 
-    class HomeClickViewHolder extends WrapperRecyclerView.ItemClickViewHolder {
+    class HomeClickViewHolder extends ERecyclerView.ItemClickViewHolder {
 
         ImageView imageView;
 
