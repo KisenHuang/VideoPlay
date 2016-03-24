@@ -10,7 +10,9 @@ import android.widget.TextView;
 import com.example.videoplay.R;
 import com.example.videoplay.model.NewsData;
 import com.example.videoplay.utils.GlideUtils;
+import com.example.videoplay.views.recyclerload.AutoLoadAdapter;
 import com.example.videoplay.views.recyclerload.ERecyclerView;
+import com.example.videoplay.views.recyclerload.ItemClickViewHolder;
 import com.example.videoplay.views.recyclerload.WrapperRecyclerView;
 
 import java.util.List;
@@ -19,20 +21,20 @@ import java.util.List;
  * @author Huangwy
  * @TIME 2016/3/16 19:27
  */
-public class NewsAdapter extends ERecyclerView.AutoLoadAdapter<NewsData> {
+public class NewsAdapter extends AutoLoadAdapter<NewsData> {
 
     public NewsAdapter(Context context) {
         super(context);
     }
 
     @Override
-    public ERecyclerView.ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
+    public ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.listitem_news, parent, false);
         return new NewsHolder(view);
     }
 
     @Override
-    public void getView(ERecyclerView.ItemClickViewHolder holder, int position, int viewType) {
+    public void getView(ItemClickViewHolder holder, int position, int viewType) {
         if (viewType == ERecyclerView.TYPE_NORMAL) {
             NewsHolder newsHolder = (NewsHolder) holder;
             NewsData newsData = mList.get(position);
@@ -43,7 +45,7 @@ public class NewsAdapter extends ERecyclerView.AutoLoadAdapter<NewsData> {
         }
     }
 
-    class NewsHolder extends ERecyclerView.ItemClickViewHolder {
+    class NewsHolder extends ItemClickViewHolder {
 
         public ImageView newsIcon;
         public TextView newsTitle;

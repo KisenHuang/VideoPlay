@@ -37,19 +37,6 @@ public abstract class BaseListFragment extends BaseFragment implements OnRefresh
     }
 
     @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (!hidden)
-            mRecyclerview.setOnItemClickListener(this);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mRecyclerview.setOnItemClickListener(this);
-    }
-
-    @Override
     public void onDestroy() {
         super.onDestroy();
         mEmptyView = null;

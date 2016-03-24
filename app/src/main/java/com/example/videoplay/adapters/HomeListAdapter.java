@@ -11,26 +11,28 @@ import com.example.videoplay.R;
 import com.example.videoplay.model.MaxUserData;
 import com.example.videoplay.utils.GlideUtils;
 import com.example.videoplay.utils.TimeUtils;
+import com.example.videoplay.views.recyclerload.AutoLoadAdapter;
 import com.example.videoplay.views.recyclerload.ERecyclerView;
+import com.example.videoplay.views.recyclerload.ItemClickViewHolder;
 
 /**
  * @author Huangwy
  * @TIME 2016/3/13 12:38
  */
-public class HomeListAdapter extends ERecyclerView.AutoLoadAdapter<MaxUserData> {
+public class HomeListAdapter extends AutoLoadAdapter<MaxUserData> {
 
     public HomeListAdapter(Context context) {
         super(context);
     }
 
     @Override
-    public ERecyclerView.ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
+    public ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
         View item = LayoutInflater.from(context).inflate(R.layout.listitem_home, parent, false);
         return new HomeClickViewHolder(item);
     }
 
     @Override
-    public void getView(ERecyclerView.ItemClickViewHolder holder, int position, int viewType) {
+    public void getView(ItemClickViewHolder holder, int position, int viewType) {
         switch (viewType) {
             case ERecyclerView.TYPE_NORMAL:
                 MaxUserData maxUserData = mList.get(position);
@@ -44,7 +46,7 @@ public class HomeListAdapter extends ERecyclerView.AutoLoadAdapter<MaxUserData> 
         }
     }
 
-    class HomeClickViewHolder extends ERecyclerView.ItemClickViewHolder {
+    class HomeClickViewHolder extends ItemClickViewHolder {
 
         TextView userName;
         TextView videoNum;
