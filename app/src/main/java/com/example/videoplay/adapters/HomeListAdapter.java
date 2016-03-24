@@ -5,18 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.videoplay.R;
-import com.example.videoplay.model.Dota2Info;
-import com.example.videoplay.model.HomePagerData;
+import com.example.videoplay.model.MaxUserData;
+import com.example.videoplay.utils.GlideUtils;
+import com.example.videoplay.utils.TimeUtils;
 import com.example.videoplay.views.recyclerload.ERecyclerView;
-import com.example.videoplay.views.recyclerload.WrapperRecyclerView;
 
 /**
  * @author Huangwy
  * @TIME 2016/3/13 12:38
  */
-public class HomeListAdapter extends ERecyclerView.AutoLoadAdapter<Dota2Info> {
+public class HomeListAdapter extends ERecyclerView.AutoLoadAdapter<MaxUserData> {
 
     public HomeListAdapter(Context context) {
         super(context);
@@ -30,16 +31,32 @@ public class HomeListAdapter extends ERecyclerView.AutoLoadAdapter<Dota2Info> {
 
     @Override
     public void getView(ERecyclerView.ItemClickViewHolder holder, int position, int viewType) {
+        switch (viewType) {
+            case ERecyclerView.TYPE_NORMAL:
+                MaxUserData maxUserData = mList.get(position);
+                HomeClickViewHolder homeHolder = (HomeClickViewHolder) holder;
 
+                GlideUtils.getInstance().loadUrl(context, maxUserData.getAvatar(), homeHolder.userIcon);
+                homeHolder.userName.setText(maxUserData.getUsername());
+                homeHolder.videoNum.setText(String.valueOf(maxUserData.getCount()));
+                homeHolder.updataTime.setText(TimeUtils.convertYMDHM(((long) maxUserData.getRecent_time()) * 1000));
+                break;
+        }
     }
 
     class HomeClickViewHolder extends ERecyclerView.ItemClickViewHolder {
 
-        ImageView imageView;
+        TextView userName;
+        TextView videoNum;
+        TextView updataTime;
+        ImageView userIcon;
 
         public HomeClickViewHolder(View itemView) {
             super(itemView);
-//            imageView = (ImageView) itemView.findViewById(R.layout.listitem_home);
+            userIcon = (ImageView) itemView.findViewById(R.id.user_icon);
+            userName = (TextView) itemView.findViewById(R.id.user_name);
+            videoNum = (TextView) itemView.findViewById(R.id.video_num);
+            updataTime = (TextView) itemView.findViewById(R.id.updata_time);
         }
     }
 }

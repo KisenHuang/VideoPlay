@@ -49,47 +49,47 @@ public class PlaceholderFragment extends Fragment {
         return rootView;
     }
 
-}
 
-class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.MyViewHolder> {
+    class MyRecycleAdapter extends RecyclerView.Adapter<MyRecycleAdapter.MyViewHolder> {
 
-    public int[] images;
+        public int[] images;
 
-    public MyRecycleAdapter(int[] imgs) {
-        this.images = imgs;
-    }
+        public MyRecycleAdapter(int[] imgs) {
+            this.images = imgs;
+        }
 
-    @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycle_item, null);
-        return new MyViewHolder(inflate);
-    }
+        @Override
+        public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycle_item, null);
+            return new MyViewHolder(inflate);
+        }
 
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+        @Override
+        public void onBindViewHolder(MyViewHolder holder, int position) {
 //        holder.item_tv.setText("RecycleView"+":"+position);
-        holder.item_tv.setImageResource(images[position]);
-    }
+            holder.item_tv.setImageResource(images[position]);
+        }
 
-    private static final int TYPE_00 = 0, TYPE_01 = 1;
+        private static final int TYPE_00 = 0, TYPE_01 = 1;
 
-    @Override
-    public int getItemViewType(int position) {
-        return super.getItemViewType(position);
-    }
+        @Override
+        public int getItemViewType(int position) {
+            return super.getItemViewType(position);
+        }
 
-    @Override
-    public int getItemCount() {
-        return images.length;
-    }
+        @Override
+        public int getItemCount() {
+            return images.length;
+        }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+        class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public ScaleImageView item_tv;
+            public ScaleImageView item_tv;
 
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            item_tv = (ScaleImageView) itemView.findViewById(R.id.item_tv);
+            public MyViewHolder(View itemView) {
+                super(itemView);
+                item_tv = (ScaleImageView) itemView.findViewById(R.id.item_tv);
+            }
         }
     }
 }

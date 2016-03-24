@@ -181,6 +181,14 @@ public class ERecyclerView extends RecyclerView {
             }
         }
 
+        public List<T> getList() {
+            return mList;
+        }
+
+        public T getPositionData(int position) {
+            return position < mList.size() && position > -1 ? mList.get(position) : null;
+        }
+
         public void clear() {
             if (mList != null && mList.size() != 0)
                 mList.clear();

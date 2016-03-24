@@ -19,6 +19,8 @@
     <color name="gray_tab">#8B8B8B</color>
     <color name="bg_color">#e1e0e0</color>
 
+    <color name="green">#65de23</color>
+
     <!-- backgroundColor-->
     <color name="bg_color_gray">#ececec</color>
     <color name="divider">@color/bg_color_gray</color>
