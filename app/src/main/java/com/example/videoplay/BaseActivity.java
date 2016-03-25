@@ -61,7 +61,7 @@ public class BaseActivity extends AppCompatActivity implements SwipeBackActivity
             getSupportActionBar().setTitle("");
             getSupportActionBar().setSubtitle("");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            mToolbar.setNavigationIcon(R.drawable.ic_backward);
+            mToolbar.setNavigationIcon(null);
         }
         mToolbarTitle = (TextView) findViewById(R.id.toolbar_title);
         mToolbarDivider = findViewById(R.id.toolbar_divider);
@@ -135,6 +135,16 @@ public class BaseActivity extends AppCompatActivity implements SwipeBackActivity
     }
 
     protected void handlerNet(Request request, final int reqCode) {
+        handlerNet(request, reqCode, false);
+    }
+
+    protected void handlerNet(Request request, final int reqCode, boolean showDialog) {
+        handlerNet(request, reqCode, showDialog, null);
+    }
+
+    protected void handlerNet(Request request, final int reqCode, boolean showDialog, String showMsg) {
+        if (showDialog)
+            showProgressDialog(showMsg);
         OkHttpUtils.getInstance().enqueue(request, reqCode, this);
     }
 
@@ -155,7 +165,7 @@ public class BaseActivity extends AppCompatActivity implements SwipeBackActivity
 
     @Override
     public void onHttpFinished(int reqcode) {
-
+        dismissProgressDialog();
     }
 
     protected void showMsg(String text) {

@@ -24,6 +24,7 @@ public abstract class BaseListFragment extends BaseFragment implements OnRefresh
     protected RecyclerLoadSupportEmptyLayout mRecyclerview;
     protected ERecyclerView mList;
     protected int mPage = 1;
+    protected boolean isFirstLoad;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -71,6 +72,7 @@ public abstract class BaseListFragment extends BaseFragment implements OnRefresh
         super.onHttpFinished(reqcode);
         mRecyclerview.setRefreshing(false);
         mRecyclerview.setIsLoading(false);
+        isFirstLoad = false;
     }
 
     @Override
@@ -85,6 +87,7 @@ public abstract class BaseListFragment extends BaseFragment implements OnRefresh
     protected void loadData() {
         if (mRecyclerview != null && !mRecyclerview.isRefreshing()) {
             mRecyclerview.setRefreshing(true);
+            isFirstLoad = true;
             onRefresh();
         }
     }

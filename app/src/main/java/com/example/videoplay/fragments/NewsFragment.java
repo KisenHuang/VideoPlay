@@ -66,7 +66,7 @@ public class NewsFragment extends BaseListFragment {
         Request request = new Request.Builder()
                 .url(HttpUrl.parse(HttpUrls.makeUrl(HttpUrls.DOTA2_NEWS, param)))
                 .build();
-        handlerNet(request, HttpUrls.REQ_CODE_LOAD);
+        handlerNet(request, HttpUrls.REQ_CODE_LOAD,true);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class NewsFragment extends BaseListFragment {
         Request request = new Request.Builder()
                 .url(HttpUrl.parse(HttpUrls.makeUrl(HttpUrls.DOTA2_NEWS, param)))
                 .build();
-        handlerNet(request, HttpUrls.REQ_CODE_REFRESH);
+        handlerNet(request, HttpUrls.REQ_CODE_REFRESH,isFirstLoad);
     }
 
     @Override

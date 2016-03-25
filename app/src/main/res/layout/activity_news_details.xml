@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/ic_backward" />
+                android:src="@drawable/back" />
 
         </FrameLayout>
 

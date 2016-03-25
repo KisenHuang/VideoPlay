@@ -2,6 +2,7 @@ package com.example.videoplay.views.recyclerload;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -33,10 +34,13 @@ public abstract class AutoLoadAdapter<T> extends RecyclerView.Adapter<ItemClickV
     private View mFooterView;
     private OnItemClickListener onItemClickListener;
 
+    protected LayoutInflater mInflater;
+
     public AutoLoadAdapter(Context context) {
         this.context = context;
         mList = new ArrayList<>();
         mIsHeaderShow = false;
+        mInflater = LayoutInflater.from(context);
     }
 
     public void addAll(List<T> list) {
@@ -94,7 +98,8 @@ public abstract class AutoLoadAdapter<T> extends RecyclerView.Adapter<ItemClickV
             return new FooterViewHolder(mFooterView);
         } else { // type normal
             ItemClickViewHolder viewHolder = this.onCreateHolder(parent, viewType);
-            viewHolder.setOnItemClickListener(onItemClickListener);
+            if (onItemClickListener != null)
+                viewHolder.setOnItemClickListener(onItemClickListener);
             return viewHolder;
         }
     }

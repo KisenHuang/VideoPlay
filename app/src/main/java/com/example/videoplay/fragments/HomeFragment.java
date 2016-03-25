@@ -104,7 +104,7 @@ public class HomeFragment extends BaseListFragment {
         Request request = new Request.Builder()
                 .url(HttpUrl.parse(HttpUrls.makeUrl(HttpUrls.MAX_USER_LIST, param)))
                 .build();
-        handlerNet(request, HttpUrls.REQ_CODE_REFRESH);
+        handlerNet(request, HttpUrls.REQ_CODE_REFRESH,isFirstLoad);
     }
 
     @Override
@@ -122,6 +122,6 @@ public class HomeFragment extends BaseListFragment {
     @Override
     public void onListItemClick(View view, int position) {
         MaxUserData positionData = mAdapter.getPositionData(position);
-        startActivity(new Intent(mContext, VideoListActivity.class).putExtra("dm_uid",positionData.getDm_link()));
+        startActivity(new Intent(mContext, VideoListActivity.class).putExtra("maxUserData",positionData));
     }
 }

@@ -76,6 +76,7 @@ public class HttpUrls {
      * 一次请求条目数
      */
     public static final int PAGE_SIZE = 30;
+    public static final int PAGE_OFFSET = 10;
 
     /**
      * 熊猫TV常量

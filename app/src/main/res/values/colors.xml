@@ -11,6 +11,7 @@
     <color name="center_blue">#54d8fa</color>
     <color name="tint_blue">#c3ebf9</color>
     <color name="white">#ffffff</color>
+    <color name="transparent_white">#88ffffff</color>
     <color name="black">#1a1919</color>
     <color name="transparent_black">#701a1919</color>
     <color name="transparent_black_l">#70312e2e</color>

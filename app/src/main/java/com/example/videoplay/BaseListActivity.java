@@ -19,6 +19,7 @@ public abstract class BaseListActivity extends BaseActivity implements SwipeRefr
     protected RecyclerLoadSupportEmptyLayout mRecyclerview;
     protected ERecyclerView mList;
     protected int mPage;
+    protected boolean isFirstLoad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public abstract class BaseListActivity extends BaseActivity implements SwipeRefr
         super.onHttpFinished(reqcode);
         mRecyclerview.setRefreshing(false);
         mRecyclerview.setIsLoading(false);
+        isFirstLoad = false;
     }
 
     @Override
@@ -75,6 +77,7 @@ public abstract class BaseListActivity extends BaseActivity implements SwipeRefr
     protected void loadData() {
         if (mRecyclerview != null && !mRecyclerview.isRefreshing()) {
             mRecyclerview.setRefreshing(true);
+            isFirstLoad = true;
             onRefresh();
         }
     }

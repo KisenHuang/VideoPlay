@@ -27,7 +27,7 @@ public class HomeListAdapter extends AutoLoadAdapter<MaxUserData> {
 
     @Override
     public ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
-        View item = LayoutInflater.from(context).inflate(R.layout.listitem_home, parent, false);
+        View item =mInflater.inflate(R.layout.listitem_home, parent, false);
         return new HomeClickViewHolder(item);
     }
 

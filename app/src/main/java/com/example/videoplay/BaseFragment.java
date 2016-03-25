@@ -27,6 +27,16 @@ public class BaseFragment extends Fragment implements HttpCallBack {
     }
 
     protected void handlerNet(Request request, final int reqCode) {
+        handlerNet(request, reqCode, false);
+    }
+
+    protected void handlerNet(Request request, final int reqCode, boolean showDialog) {
+        handlerNet(request, reqCode, showDialog, null);
+    }
+
+    protected void handlerNet(Request request, final int reqCode, boolean showDialog, String showMsg) {
+        if (showDialog)
+            mActivity.showProgressDialog(showMsg);
         OkHttpUtils.getInstance().enqueue(request, reqCode, this);
     }
 
@@ -47,6 +57,6 @@ public class BaseFragment extends Fragment implements HttpCallBack {
 
     @Override
     public void onHttpFinished(int reqcode) {
-
+        mActivity.dismissProgressDialog();
     }
 }

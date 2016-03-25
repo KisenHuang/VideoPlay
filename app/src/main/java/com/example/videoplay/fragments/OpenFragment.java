@@ -64,7 +64,7 @@ public class OpenFragment extends BaseListFragment {
         Request request = new Request.Builder()
                 .url(HttpUrl.parse(HttpUrls.NEW_DOTA_URL))
                 .build();
-        handlerNet(request, HttpUrls.REQ_CODE_GET);
+        handlerNet(request, HttpUrls.REQ_CODE_GET,isFirstLoad);
     }
 
     @Override
