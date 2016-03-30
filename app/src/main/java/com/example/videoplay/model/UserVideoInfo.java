@@ -60,12 +60,24 @@ public class UserVideoInfo implements Serializable {
     private String username;
     private String vtag;
     private String zone_time;
+
     /**
      * desc : 标清
      * seg_type : flv
      * type : flv
      * url : http://pl.youku.com/playlist/m3u8?vid=377699243&time=1458825668&ts=1458825668&ctype=12&token=2504&keyframe=0&sid=545882566885012c415bf&ev=1&type=flv&ep=dyaREkGPU8gG7SvaiD8bNCjjcSVZXP0N8RmMiNBmA9QmTei7&oip=2096831764
      */
+
+    public String getReferer() {
+        return url_info.getReferer();
+    }
+
+    public String getUser_Agent() {
+        return url_info.getUser_Agent();
+    }
+    public String getCt() {
+        return url_info.getUrl();
+    }
 
     private List<SegsEntity> segs;
 
@@ -197,7 +209,7 @@ public class UserVideoInfo implements Serializable {
         return segs;
     }
 
-    public static class UrlInfoEntity {
+    public static class UrlInfoEntity implements Serializable{
         private String Referer;
         private String User_Agent;
         private String url;
@@ -227,7 +239,7 @@ public class UserVideoInfo implements Serializable {
         }
     }
 
-    public static class UserInfoEntity {
+    public static class UserInfoEntity implements Serializable{
         private String avatar;
         private int classX;
         private String dm_link;
@@ -293,7 +305,7 @@ public class UserVideoInfo implements Serializable {
         }
     }
 
-    public static class SegsEntity {
+    public static class SegsEntity implements Serializable{
         private String desc;
         private String seg_type;
         private String type;

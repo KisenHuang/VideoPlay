@@ -25,7 +25,7 @@ public class HttpUrls {
     /**
      * 熊猫TV视频地址
      */
-    private static final String PANDA_TV = "http://api.m.panda.tv/";//服务器地址
+    public static final String PANDA_TV = "http://api.m.panda.tv/";//服务器地址
     /**
      * 首页顶部ViewPager
      */
@@ -58,6 +58,13 @@ public class HttpUrls {
      * 视频地址
      */
     public static final String MAX_VIDEO_DETAIL = "detail/v2/";
+    /**
+     * http://play.youku.com/play/get.json?
+     * vid=XMTUwNTUzNDUwNA==
+     * &ct=12&Referer=http%3A%2F%2Fv.youku.com%2F
+     * &User-Agent=Mozilla%2F6.0+%28iPhone%3B+CPU+iPhone+OS+8_0+like+Mac+OS+X%29+AppleWebKit%2F600.1.3+%28KHTML%2C+like+Gecko%29+Version%2F8.0+Mobile%2F12A4345d+Safari%2F600.1.4
+     */
+    public static final String MAX_GET_STREAM = "http://play.youku.com/play/get.json?";
 
     /********************************************************************************************/
     /**
@@ -76,7 +83,7 @@ public class HttpUrls {
      * 一次请求条目数
      */
     public static final int PAGE_SIZE = 30;
-    public static final int PAGE_OFFSET = 10;
+    public static final int PAGE_OFFSET = 20;
 
     /**
      * 熊猫TV常量
@@ -108,5 +115,9 @@ public class HttpUrls {
         return url + str;
     }
 
-
+    public static String trimUrl(String url){
+        url = url.replace(":","%3A");
+        url = url.replace("/","%2F");
+        return url;
+    }
 }

@@ -39,7 +39,6 @@ public class NewsFragment extends BaseListFragment {
     private void initView() {
         mAdapter = new NewsAdapter(mContext);
         mRecyclerview.setAdapter(mAdapter);
-        mRecyclerview.addItemDecoration(new ERecyclerView.SpacesItemDecoration(4));
     }
 
     private void initData() {

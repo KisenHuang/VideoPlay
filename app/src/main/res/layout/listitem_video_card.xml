@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:cardCornerRadius="0dp"
-    app:cardElevation="4dp"
+    app:cardElevation="2dp"
+    app:cardMaxElevation="1dp"
     app:cardPreventCornerOverlap="false">
 
     <LinearLayout

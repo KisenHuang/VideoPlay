@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.videoplay" >
+    package="com.example.videoplay">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -12,13 +12,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activities.MainActivity"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustPan" >
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,9 +27,18 @@
         </activity>
         <activity
             android:name=".activities.news.NewsDetailsActivity"
-            android:configChanges="orientation|screenSize" />
-        <activity android:name=".activities.video.VideoListActivity" >
-        </activity>
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".activities.video.VideoListActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".activities.video.VideoPlayerActivity" />
+        <activity
+            android:name=".activities.video.VideoWebActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

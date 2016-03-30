@@ -36,9 +36,8 @@ public class MainActivity extends BaseActivity implements TabHost.OnTabChangeLis
         tabhost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
         tabhost.addTab(tabhost.newTabSpec("home").setIndicator(getTabItemView("首页", R.drawable.selector_tab_home)), HomeFragment.class, null);
         tabhost.addTab(tabhost.newTabSpec("news").setIndicator(getTabItemView("新闻", R.drawable.selector_tab_news)), NewsFragment.class, null);
-        tabhost.addTab(tabhost.newTabSpec("image").setIndicator(getTabItemView("图片", R.drawable.selector_tab_home)), OpenFragment.class, null);
-        tabhost.addTab(tabhost.newTabSpec("mine").setIndicator(getTabItemView("我的", R.drawable.selector_tab_home)), MineFragment.class, null);
-//        tabhost.addTab(tabhost.newTabSpec("home").setIndicator(getTabItemView("首页", R.drawable.selector_tab_home)), OpenFragment.class,null);
+        tabhost.addTab(tabhost.newTabSpec("image").setIndicator(getTabItemView("图片", R.drawable.selector_tab_image)), OpenFragment.class, null);
+        tabhost.addTab(tabhost.newTabSpec("mine").setIndicator(getTabItemView("我的", R.drawable.selector_tab_mine)), MineFragment.class, null);
 
         tabhost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
         tabhost.setOnTabChangedListener(this);
@@ -53,7 +52,7 @@ public class MainActivity extends BaseActivity implements TabHost.OnTabChangeLis
     public void onTabChanged(String tabId) {
         switch (tabId) {
             case "home":
-                setTitle("首页");
+                setTitle("视频");
                 break;
             case "news":
                 setTitle("新闻");

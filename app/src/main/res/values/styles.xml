@@ -11,7 +11,7 @@
         <item name="PagerIndicatorStyle">@style/pagerIndicator</item>
         <item name="vpiTabPageIndicatorStyle">@style/vpiTabPageIndicatorStyle</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@color/bg_color_gray</item>
+        <item name="android:windowBackground">@color/hint_blue</item>
         <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
     </style>
     <!-- Application theme. -->

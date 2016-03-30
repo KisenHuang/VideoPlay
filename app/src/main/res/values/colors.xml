@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- themeColor-->
-    <color name="colorPrimary">#2BBBE0</color>
-    <color name="colorPrimaryDark">#1a9dbe</color>
+    <color name="colorPrimary">#5585c7</color>
+    <color name="colorPrimaryDark">#4571ae</color>
     <color name="colorAccent">#9d3bff</color>
 
 
     <!-- textColor-->
-    <color name="theme_blue">@color/colorPrimary</color>
-    <color name="center_blue">#54d8fa</color>
-    <color name="tint_blue">#c3ebf9</color>
+    <color name="blue">#2BBBE0</color>
+    <color name="theme_blue">#5585c7</color>
+    <color name="center_blue">#669be4</color>
+    <color name="hint_blue">#c3e2f9</color>
     <color name="white">#ffffff</color>
     <color name="transparent_white">#88ffffff</color>
     <color name="black">#1a1919</color>
@@ -18,7 +19,7 @@
     <color name="gray">#312e2e</color>
     <color name="hint_gray">#5a5a5a</color>
     <color name="gray_tab">#8B8B8B</color>
-    <color name="bg_color">#e1e0e0</color>
+    <color name="bg_color">#e0e0e0</color>
 
     <color name="green">#65de23</color>
 

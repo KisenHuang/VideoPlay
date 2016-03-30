@@ -1,5 +1,6 @@
 package com.example.videoplay.activities.video;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.view.View;
@@ -92,6 +93,7 @@ public class VideoListActivity extends BaseListActivity {
     public void onListItemClick(View view, int position) {
         super.onListItemClick(view, position);
         UserVideoInfo positionData = mAdapter.getPositionData(position);
-
+//        startActivity(new Intent(this,VideoPlayerActivity.class).putExtra("userVideoInfo",positionData));
+        startActivity(new Intent(this, VideoWebActivity.class).putExtra("url", positionData.getUrl()).putExtra("title", positionData.getTitle()));
     }
 }

@@ -7,14 +7,16 @@
 
     <ImageView
         android:id="@+id/imageview"
-        android:layout_width="wrap_content"
+        android:layout_width="25dp"
         android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
         android:focusable="false" />
 
     <TextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:textColor="@color/selector_text_tab_color"
         android:textSize="@dimen/size_10" />
 

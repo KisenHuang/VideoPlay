@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 通用标题栏 -->
+<?xml version="1.0" encoding="utf-8"?><!-- 通用标题栏 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/view_title"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbarHeight"
-        android:gravity="center_vertical"
         android:background="@color/theme_blue"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+        android:gravity="center_vertical"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:singleLine="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             android:textSize="@dimen/size_20"

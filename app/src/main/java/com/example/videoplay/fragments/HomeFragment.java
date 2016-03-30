@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.example.videoplay.BaseListFragment;
+import com.example.videoplay.R;
 import com.example.videoplay.activities.video.VideoListActivity;
 import com.example.videoplay.adapters.HomeListAdapter;
 import com.example.videoplay.adapters.ImagePagerAdapter;
@@ -51,14 +53,14 @@ public class HomeFragment extends BaseListFragment {
 //        mRecyclerview.addHeaderView(header);
     }
 
-//    private void loadPager() {
-//        //请求头部ViewPager图片
-//        RequestParam param = new RequestParam(HttpUrls.PANDA);
-//        Request request = new Request.Builder()
-//                .url(HttpUrl.parse(HttpUrls.makeUrl(HttpUrls.PANDA_HOME_PAGER, param)))
-//                .build();
-//        handlerNet(request, HttpUrls.REQ_CODE_GET);
-//    }
+    private void loadPager() {
+        //请求头部ViewPager图片
+        RequestParam param = new RequestParam(HttpUrls.PANDA);
+        Request request = new Request.Builder()
+                .url(HttpUrl.parse(HttpUrls.PANDA_TV + HttpUrls.PANDA_HOME_PAGER + "?" + param.getParams()))
+                .build();
+        handlerNet(request, HttpUrls.REQ_CODE_GET);
+    }
 //
 //    private void loadList() {
 //        //请求视频列表
@@ -77,9 +79,9 @@ public class HomeFragment extends BaseListFragment {
         super.onHttpSuccess(reqcode, data);
         switch (reqcode) {
             case HttpUrls.REQ_CODE_GET:
-                List<HomePagerData> pagerData = JSON.parseArray(JSON.parseObject(data).getString("data"), HomePagerData.class);
-                viewPager.setAdapter(new ImagePagerAdapter(mContext, pagerData));
-                indicator.setViewPager(viewPager);
+//                List<HomePagerData> pagerData = JSON.parseArray(JSON.parseObject(data).getString("data"), HomePagerData.class);
+//                viewPager.setAdapter(new ImagePagerAdapter(mContext, pagerData));
+//                indicator.setViewPager(viewPager);
                 break;
             case HttpUrls.REQ_CODE_REFRESH:
                 mAdapter.clear();
@@ -104,7 +106,7 @@ public class HomeFragment extends BaseListFragment {
         Request request = new Request.Builder()
                 .url(HttpUrl.parse(HttpUrls.makeUrl(HttpUrls.MAX_USER_LIST, param)))
                 .build();
-        handlerNet(request, HttpUrls.REQ_CODE_REFRESH,isFirstLoad);
+        handlerNet(request, HttpUrls.REQ_CODE_REFRESH, isFirstLoad);
     }
 
     @Override
@@ -122,6 +124,6 @@ public class HomeFragment extends BaseListFragment {
     @Override
     public void onListItemClick(View view, int position) {
         MaxUserData positionData = mAdapter.getPositionData(position);
-        startActivity(new Intent(mContext, VideoListActivity.class).putExtra("maxUserData",positionData));
+        startActivity(new Intent(mContext, VideoListActivity.class).putExtra("maxUserData", positionData));
     }
 }
