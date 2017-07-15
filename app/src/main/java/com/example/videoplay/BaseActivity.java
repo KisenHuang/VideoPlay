@@ -13,9 +13,11 @@ import android.widget.Toast;
 import com.example.videoplay.http.okHttps.HttpCallBack;
 import com.example.videoplay.http.okHttps.OkHttpUtils;
 import com.example.videoplay.utils.LogUtil;
+import com.example.videoplay.utils.WildDogUtils;
 import com.example.videoplay.views.swipebacklayout.SwipeBackActivityBase;
 import com.example.videoplay.views.swipebacklayout.SwipeBackActivityHelper;
 import com.example.videoplay.views.swipebacklayout.SwipeBackLayout;
+import com.wilddog.client.Wilddog;
 
 import okhttp3.Request;
 
@@ -35,7 +37,10 @@ public class BaseActivity extends AppCompatActivity implements SwipeBackActivity
     protected TextView mToolbarTitle;
 
     protected View mToolbarDivider;
+
     private ProgressDialog mProgressDialog;
+
+    protected Wilddog wDRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class BaseActivity extends AppCompatActivity implements SwipeBackActivity
         mHelper.onActivityCreate();
         mProgressDialog = new ProgressDialog(mContext);
         mProgressDialog.setProgressDrawable(getResources().getDrawable(R.drawable.empty));
+        wDRef = WildDogUtils.getInstance().getDefaultRef();
         // 禁止滑动返回
         setSwipeBackEnable(true);
     }
@@ -169,7 +175,7 @@ public class BaseActivity extends AppCompatActivity implements SwipeBackActivity
     }
 
     protected void showMsg(String text) {
-        Toast.makeText(mContext, text, Toast.LENGTH_SHORT);
+        Toast.makeText(mContext, text, Toast.LENGTH_SHORT).show();
     }
 
     public void showProgressDialog() {
@@ -210,4 +216,5 @@ public class BaseActivity extends AppCompatActivity implements SwipeBackActivity
             mProgressDialog.dismiss();
         }
     }
+
 }

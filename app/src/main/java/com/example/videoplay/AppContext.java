@@ -3,8 +3,10 @@ package com.example.videoplay;
 import android.app.Application;
 
 import com.example.videoplay.utils.GlideUtils;
+import com.wilddog.client.Wilddog;
 
 /**
+ * 程序入口类
  * Created by Huangwy on 2015/11/28.
  */
 public class AppContext extends Application {
@@ -14,6 +16,7 @@ public class AppContext extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Wilddog.setAndroidContext(this);
         appContext = this;
         initGlide();
     }
@@ -25,4 +28,5 @@ public class AppContext extends Application {
     public static AppContext getInstance() {
         return appContext;
     }
+
 }

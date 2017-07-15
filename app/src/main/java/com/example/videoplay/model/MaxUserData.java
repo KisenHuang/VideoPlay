@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 /**
  * @author Huangwy
- * @TIME 2016/3/23 20:07
  */
 public class MaxUserData implements Serializable {
 
@@ -25,6 +24,18 @@ public class MaxUserData implements Serializable {
     private float recent_time;
     private int show_type;
     private String username;
+    /**
+     * 该主播是否被关注
+     */
+    private boolean isAttention;
+
+    public boolean isAttention() {
+        return isAttention;
+    }
+
+    public void setIsAttention(boolean isAttention) {
+        this.isAttention = isAttention;
+    }
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;

@@ -52,7 +52,7 @@ public class ImagePagerAdapter extends PagerAdapter {
         TextView textView = (TextView) view.findViewById(R.id.item_tv);
 
         HomePagerData homePagerData = mList.get(position);
-        GlideUtils.getInstance().loadUrl(context, homePagerData.getQcm_img(), imageView);
+        GlideUtils.getInstance().loadUrl(context, homePagerData.getBigimg(), imageView);
         textView.setText(homePagerData.getTitle());
         return view;
     }

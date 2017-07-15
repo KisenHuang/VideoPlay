@@ -18,7 +18,6 @@ import com.example.videoplay.http.HttpUrls;
 import com.example.videoplay.http.okHttps.RequestParam;
 import com.example.videoplay.model.HomePagerData;
 import com.example.videoplay.model.MaxUserData;
-import com.example.videoplay.utils.LogUtil;
 import com.example.videoplay.views.indicator.CirclePageIndicator;
 
 import java.util.ArrayList;
@@ -42,10 +41,11 @@ public class HomeFragment extends BaseListFragment {
     }
 
     private void initView() {
-//        //头视图
+        //头视图
 //        View header = LayoutInflater.from(mContext).inflate(R.layout.header_home_fragment, null);
 //        viewPager = (ViewPager) header.findViewById(R.id.focusViewPager);
 //        indicator = (CirclePageIndicator) header.findViewById(R.id.focusIndicator);
+
         LinearLayoutManager manager = new LinearLayoutManager(mContext);
         mRecyclerview.setLayoutManager(manager);
         mAdapter = new HomeListAdapter(mContext);
@@ -61,7 +61,7 @@ public class HomeFragment extends BaseListFragment {
                 .build();
         handlerNet(request, HttpUrls.REQ_CODE_GET);
     }
-//
+
 //    private void loadList() {
 //        //请求视频列表
 //        RequestParam param = new RequestParam(HttpUrls.PANDA);
@@ -79,9 +79,9 @@ public class HomeFragment extends BaseListFragment {
         super.onHttpSuccess(reqcode, data);
         switch (reqcode) {
             case HttpUrls.REQ_CODE_GET:
-//                List<HomePagerData> pagerData = JSON.parseArray(JSON.parseObject(data).getString("data"), HomePagerData.class);
-//                viewPager.setAdapter(new ImagePagerAdapter(mContext, pagerData));
-//                indicator.setViewPager(viewPager);
+                List<HomePagerData> pagerData = JSON.parseArray(JSON.parseObject(data).getString("data"), HomePagerData.class);
+                viewPager.setAdapter(new ImagePagerAdapter(mContext, pagerData));
+                indicator.setViewPager(viewPager);
                 break;
             case HttpUrls.REQ_CODE_REFRESH:
                 mAdapter.clear();
@@ -100,6 +100,7 @@ public class HomeFragment extends BaseListFragment {
 
     @Override
     public void onRefresh() {
+//        loadPager();
         RequestParam param = new RequestParam(HttpUrls.MAX);
         mPage = 1;
         param.put("game_type", "dota2");

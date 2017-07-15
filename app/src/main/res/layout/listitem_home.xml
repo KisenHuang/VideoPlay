@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/white"
     android:layout_marginLeft="3dp"
     android:layout_marginRight="3dp"
+    app:cardBackgroundColor="@color/white"
     app:cardElevation="2dp"
     app:cardMaxElevation="1dp"
     app:cardPreventCornerOverlap="false"
@@ -15,68 +15,83 @@
         android:id="@+id/user_icon"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:scaleType="centerCrop"
         app:border_color="@color/bg_color"
-        app:border_width="0.5dp"
-        android:scaleType="centerCrop" />
+        app:border_width="0.5dp" />
 
-    <View
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginLeft="75dp" />
+        android:layout_marginLeft="75dp">
 
-    <TextView
-        android:id="@+id/user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:text="11111111122222"
-        android:textColor="@color/gray"
-        android:textSize="@dimen/size_15" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginLeft="90dp"
-        android:orientation="horizontal">
-
+        <!-- 标题-->
         <TextView
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="数量 "
-            android:textColor="@color/green"
-            android:textSize="@dimen/size_12" />
-
-        <TextView
-            android:id="@+id/video_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="111111"
-            android:textColor="@color/green"
-            android:textSize="@dimen/size_12" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
-        android:layout_marginRight="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/updata_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="112233"
+            android:text="11111111122222"
             android:textColor="@color/gray"
-            android:textSize="@dimen/size_11" />
+            android:textSize="@dimen/size_15" />
 
-        <TextView
+        <!-- 数量-->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="更新"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/size_11" />
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数量 "
+                android:textColor="@color/green"
+                android:textSize="@dimen/size_12" />
+
+            <TextView
+                android:id="@+id/video_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="111111"
+                android:textColor="@color/green"
+                android:textSize="@dimen/size_12" />
+        </LinearLayout>
+
+        <!--更新时间-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/updata_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="112233"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/size_11" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="更新"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/size_11" />
+
+        </LinearLayout>
+
+        <!-- 收藏按钮-->
+        <ImageView
+            android:id="@+id/collete"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/no_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
 </android.support.v7.widget.CardView>

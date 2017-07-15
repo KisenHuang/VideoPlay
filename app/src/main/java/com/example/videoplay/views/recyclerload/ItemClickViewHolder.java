@@ -25,6 +25,6 @@ public class ItemClickViewHolder extends RecyclerView.ViewHolder implements View
     @Override
     public void onClick(View v) {
         if (mOnItemClickListener != null)
-            mOnItemClickListener.onItemClick(v, getPosition());
+            mOnItemClickListener.onItemClick(v, getLayoutPosition());
     }
 }

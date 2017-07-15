@@ -26,7 +26,7 @@ public class VideoWebActivity extends BaseActivity implements View.OnClickListen
     private FrameLayout title_layout;
     private ImageView back;
     private TextView title;
-    private MyWebChromeClient xwebchromeclient;
+    private MyWebChromeClient webChromeClient;
     private boolean isVideoViewPopShow;
 
     @Override
@@ -42,6 +42,7 @@ public class VideoWebActivity extends BaseActivity implements View.OnClickListen
         url = getIntent().getStringExtra("url");
         titleName = getIntent().getStringExtra("title");
         setTitle(titleName);
+        mToolbar.setNavigationIcon(R.drawable.ic_backward);
         mWebView = (WebView) findViewById(R.id.webview);
         video_fullView = (FrameLayout) findViewById(R.id.video_fullView);
         title_layout = (FrameLayout) findViewById(R.id.title_layout);
@@ -67,11 +68,17 @@ public class VideoWebActivity extends BaseActivity implements View.OnClickListen
         }
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+
+        return true;
+    }
+
     /**
      * 全屏时按返加键执行退出全屏方法
      */
     public void hideCustomView() {
-        xwebchromeclient.onHideCustomView();
+        webChromeClient.onHideCustomView();
     }
 
     /**
@@ -80,7 +87,7 @@ public class VideoWebActivity extends BaseActivity implements View.OnClickListen
      * @return
      */
     public boolean inCustomView() {
-        return xwebchromeclient.inCustomView();
+        return webChromeClient.inCustomView();
     }
 
 
@@ -114,10 +121,10 @@ public class VideoWebActivity extends BaseActivity implements View.OnClickListen
         } catch (Exception e) {
             e.printStackTrace();
         }
-        xwebchromeclient = new MyWebChromeClient(this, video_fullView, mWebView);
-        xwebchromeclient.setOnShowCustomView(this);
+        webChromeClient = new MyWebChromeClient(this, video_fullView, mWebView);
+        webChromeClient.setOnShowCustomView(this);
         mWebView.setWebViewClient(new DetailsWebViewClient());
-        mWebView.setWebChromeClient(xwebchromeclient);
+        mWebView.setWebChromeClient(webChromeClient);
         showProgressDialog();
     }
 

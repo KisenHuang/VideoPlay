@@ -3,7 +3,8 @@
     <!-- themeColor-->
     <color name="colorPrimary">#5585c7</color>
     <color name="colorPrimaryDark">#4571ae</color>
-    <color name="colorAccent">#9d3bff</color>
+    <color name="colorAccent">#c13bff</color>
+    <color name="colorAccent1">#c082fd</color>
 
 
     <!-- textColor-->
@@ -19,11 +20,17 @@
     <color name="gray">#312e2e</color>
     <color name="hint_gray">#5a5a5a</color>
     <color name="gray_tab">#8B8B8B</color>
-    <color name="bg_color">#e0e0e0</color>
+    <color name="bg_color">#f5f5f5</color>
+    <color name="round_line">#d4d4d4</color>
+    <color name="line">@color/bg_color_gray</color>
+
 
     <color name="green">#65de23</color>
 
     <!-- backgroundColor-->
+    <color name="button_normal">@color/colorPrimary</color>
+    <color name="button_press">@color/colorPrimaryDark</color>
+    <color name="button_dis_enabled">@color/colorPrimaryDark</color>
     <color name="bg_color_gray">#ececec</color>
     <color name="divider">@color/bg_color_gray</color>
     <color name="textcolor_green">#77a77a</color>

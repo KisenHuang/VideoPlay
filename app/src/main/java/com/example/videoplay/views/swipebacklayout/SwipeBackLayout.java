@@ -376,8 +376,12 @@ public class SwipeBackLayout extends FrameLayout {
 		if (!mEnable) {
 			return false;
 		}
-		mDragHelper.processTouchEvent(event);
-		return true;
+		try {
+			mDragHelper.processTouchEvent(event);
+			return true;
+		} catch (ArrayIndexOutOfBoundsException e) {
+			return false;
+		}
 	}
 
 	@Override

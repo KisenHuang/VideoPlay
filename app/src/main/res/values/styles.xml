@@ -11,7 +11,7 @@
         <item name="PagerIndicatorStyle">@style/pagerIndicator</item>
         <item name="vpiTabPageIndicatorStyle">@style/vpiTabPageIndicatorStyle</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@color/hint_blue</item>
+        <item name="android:windowBackground">@color/bg_color</item>
         <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
     </style>
     <!-- Application theme. -->
@@ -81,9 +81,58 @@
         <item name="android:height">@dimen/optionHeight</item>
         <item name="android:textSize">@dimen/size_15</item>
         <item name="android:textColor">@color/gray</item>
+        <item name="android:paddingLeft">15dp</item>
         <item name="android:clickable">true</item>
         <item name="android:background">@drawable/bg_button_text</item>
         <item name="android:gravity">center|left</item>
     </style>
+
+    <!-- 我的页面 TableRow选项-->
+    <style name="tab_row_style">
+        <item name="android:minHeight">@dimen/optionHeight</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:background">@drawable/bg_button_text</item>
+        <item name="android:gravity">center|left</item>
+    </style>
+
+    <!-- 我的页面 TextView-->
+    <style name="mine_text_style">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/size_15</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:gravity">center|left</item>
+    </style>
+
+    <!-- edittext样式 -->
+    <style name="edittextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">top</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textSize">@dimen/size_15</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColorHint">@color/hint_gray</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <!-- 灰绿色按钮样式 -->
+    <style name="buttonStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/size_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_button_blue</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+
+    <!-- 灰绿色方角按钮样式 -->
+    <style name="buttonBoxStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/size_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_button_box_blue</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+
 
 </resources>

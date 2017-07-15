@@ -1,7 +1,6 @@
 package com.example.videoplay.adapters;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -15,6 +14,8 @@ import com.example.videoplay.views.recyclerload.AutoLoadAdapter;
 import com.example.videoplay.views.recyclerload.ERecyclerView;
 import com.example.videoplay.views.recyclerload.ItemClickViewHolder;
 
+import java.util.List;
+
 /**
  * @author Huangwy
  * @TIME 2016/3/13 12:38
@@ -27,8 +28,24 @@ public class HomeListAdapter extends AutoLoadAdapter<MaxUserData> {
 
     @Override
     public ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType) {
-        View item =mInflater.inflate(R.layout.listitem_home, parent, false);
+        View item = mInflater.inflate(R.layout.listitem_home, parent, false);
         return new HomeClickViewHolder(item);
+    }
+
+    @Override
+    public void addAll(List<MaxUserData> list) {
+        // TODO: 2016/4/14 从数据库中读取所有关注主播数据
+        super.addAll(list);
+    }
+
+    /**
+     * 用于手动刷新界面
+     *
+     * @param list
+     */
+    public void refresh(List<MaxUserData> list) {
+        // TODO: 2016/4/14 从数据库中读取所有关注主播数据
+        notifyDataSetChanged();
     }
 
     @Override

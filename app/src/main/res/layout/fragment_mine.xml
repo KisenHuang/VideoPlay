@@ -1,43 +1,149 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
+    <!-- 顶部登录-->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="@drawable/bg_blue_gradual" />
+        android:background="@drawable/bg_blue_gradual">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/bg_color" />
+        <com.example.videoplay.views.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            app:border_color="@color/bg_color"
+            app:border_width="1dp" />
 
-    <TextView
-        android:id="@+id/collection"
-        style="@style/button_style"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/optionHeight"
-        android:paddingLeft="15dp"
-        android:text="@string/my_collection" />
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:text="点击登录"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/size_15" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/bg_color" />
+    </FrameLayout>
 
-    <View
+    <!-- table列表选项-->
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/bg_color" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
 
-    <TextView
-        style="@style/button_style"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/optionHeight"
-        android:paddingLeft="15dp"
-        android:text="@string/my_setting" />
+        <TableRow
+            android:id="@+id/collection"
+            style="@style/tab_row_style">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/colletion" />
+
+            <TextView
+                style="@style/mine_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/optionHeight"
+                android:text="@string/my_collection" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/grayarrow" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/attention"
+            style="@style/tab_row_style">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/attention" />
+
+            <TextView
+                style="@style/mine_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/optionHeight"
+                android:text="@string/my_attention" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/grayarrow" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/feedback"
+            style="@style/tab_row_style"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/feedback" />
+
+            <TextView
+                style="@style/mine_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/optionHeight"
+                android:text="@string/my_feedback" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/grayarrow" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/follow"
+            style="@style/tab_row_style">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/follow" />
+
+            <TextView
+                style="@style/mine_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/optionHeight"
+                android:text="@string/my_follow" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/grayarrow" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/settings"
+            style="@style/tab_row_style"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/setting" />
+
+            <TextView
+                style="@style/mine_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/optionHeight"
+                android:paddingLeft="15dp"
+                android:text="@string/my_setting" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/grayarrow" />
+        </TableRow>
+    </TableLayout>
 
 </LinearLayout>

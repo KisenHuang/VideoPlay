@@ -15,6 +15,8 @@ import com.example.videoplay.R;
 import java.lang.ref.WeakReference;
 
 /**
+ * 自定义WebChromeClient
+ *
  * @author Huangwy
  * @TIME 2016/3/26 14:36
  */

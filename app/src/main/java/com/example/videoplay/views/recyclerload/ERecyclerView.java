@@ -38,7 +38,6 @@ public class ERecyclerView extends RecyclerView {
     private final static int PULL_LOAD_MORE_DELTA = 50; // when pull up >= 50px
     private boolean mEnablePullLoad;
     private boolean mPullLoading;
-    private Map<Object,OnItemClickListener> onItemClickListenerMap = new HashMap<>();
 
     private View emptyView;
 
@@ -50,16 +49,6 @@ public class ERecyclerView extends RecyclerView {
     private boolean hasMoreItems = false;
     //是否正在加载更多
     private boolean mIsLoading = false;
-
-//    /**
-//     * 标记是否正在加载更多，防止再次调用加载更多接口
-//     */
-//    private boolean mIsLoadingMore;
-//
-//    /**
-//     * 标记加载更多的position
-//     */
-//    private int mLoadMorePosition;
 
     /**
      * 自定义实现了头部和底部加载更多的adapter
@@ -154,173 +143,8 @@ public class ERecyclerView extends RecyclerView {
         mAutoLoadAdapter.setFooterShow(enable);
     }
 
-
-//    public abstract class AutoLoadAdapter<T> extends RecyclerView.Adapter<ItemClickViewHolder> {
-//
-//        protected List<T> mList;
-//
-//        protected List<Object> mHeaderList;
-//
-//        protected Context context;
-//        /**
-//         * 数据adapter
-//         */
-//        private boolean mIsHeaderShow;
-//
-//        private boolean mIsFooterShow;
-//
-//        private View mHeaderView;
-//
-//        private View mFooterView;
-//
-//        public AutoLoadAdapter(Context context) {
-//            this.context = context;
-//            mList = new ArrayList<>();
-//            mIsHeaderShow = false;
-//        }
-//
-//        public void addAll(List<T> list) {
-//            if (list != null && list.size() != 0) {
-//                mList.addAll(list);
-//                notifyDataSetChanged();
-//            }
-//        }
-//
-//        public List<T> getList() {
-//            return mList;
-//        }
-//
-//        public T getPositionData(int position) {
-//            return position < mList.size() && position > -1 ? mList.get(position) : null;
-//        }
-//
-//        public void clear() {
-//            if (mList != null && mList.size() != 0)
-//                mList.clear();
-//        }
-//
-//        public int getHeaderCount() {
-//            return mHeaderView != null ? 1 : 0;
-//        }
-//
-//        @Override
-//        public int getItemViewType(int position) {
-//            int headerPosition = 0;
-//            int footerPosition = getItemCount() - 1;
-//
-//            if (headerPosition == position && mIsHeaderShow && (mHeaderView != null)) {
-//                return TYPE_HEADER;
-//            }
-//            if (footerPosition == position && mIsFooterShow && (mFooterView != null)) {
-//                return TYPE_FOOTER;
-//            }
-//            /**
-//             * 这么做保证layoutManager切换之后能及时的刷新上对的布局子类可重写用于切换列表和宫格试图
-//             */
-////            if (getLayoutManager() instanceof LinearLayoutManager) {
-////                return TYPE_LIST;
-////            } else if (getLayoutManager() instanceof StaggeredGridLayoutManager) {
-////                return TYPE_STAGGER;
-////            }
-//            return TYPE_NORMAL;
-//        }
-//
-//        @Override
-//        public ItemClickViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//            if (viewType == TYPE_HEADER) {
-//                return new HeaderViewHolder(mHeaderView);
-//            }
-//            if (viewType == TYPE_FOOTER) {
-//                return new FooterViewHolder(mFooterView);
-//            } else { // type normal
-//                return this.onCreateHolder(parent, viewType);
-//            }
-//        }
-//
-//        public abstract ItemClickViewHolder onCreateHolder(ViewGroup parent, int viewType);
-//
-//        /**
-//         * 获取对应Id数据
-//         *
-//         * @param position
-//         * @return
-//         */
-//        public T getItem(int position) {
-//            return mList.get(position);
-//        }
-//
-//        public class FooterViewHolder extends ItemClickViewHolder {
-//
-//            public FooterViewHolder(View itemView) {
-//                super(itemView);
-//            }
-//        }
-//
-//        public class HeaderViewHolder extends ItemClickViewHolder {
-//            public HeaderViewHolder(View itemView) {
-//                super(itemView);
-//            }
-//        }
-//
-//        @Override
-//        public void onBindViewHolder(ItemClickViewHolder holder, int position) {
-//            int viewType = getItemViewType(position);
-//            if (mIsHeaderShow)
-//                position = position - getHeaderCount();
-//            getView(holder, position, viewType);
-//        }
-//
-//        public abstract void getView(ItemClickViewHolder holder, int position, int viewType);
-//
-//        /**
-//         * 需要计算上加载更多和添加的头部俩个
-//         *
-//         * @return
-//         */
-//        @Override
-//        public int getItemCount() {
-//            int count = mList.size();
-//            if (mIsFooterShow) count++;
-//            if (mIsHeaderShow) count++;
-//            return count;
-//        }
-//
-//        public void setHeaderShow(boolean enable) {
-//            mIsHeaderShow = enable;
-//        }
-//
-//        public void addHeaderView(View header) {
-//            mHeaderView = header;
-//        }
-//
-//        public void setFooterShow(boolean enable) {
-//            mIsFooterShow = enable;
-//        }
-//
-//        public void addFooterView(View footer) {
-//            mFooterView = footer;
-//        }
-//    }
-
     /***************************************************已完成********************************************************/
 
-
-    /**
-     * 自定义带有点击事件的ViewHolder
-     */
-//    public class ItemClickViewHolder extends RecyclerView.ViewHolder implements OnClickListener {
-//
-//        public ItemClickViewHolder(View itemView) {
-//            super(itemView);
-//            itemView.setOnClickListener(this);
-//        }
-//
-//        @Override
-//        public void onClick(View v) {
-//            if (mOnItemClickListener != null)
-//                mOnItemClickListener.onItemClick(v, getPosition());
-//        }
-//    }
 
     /**
      * 设置加载监听

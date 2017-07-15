@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/lyCurrentPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/viewline1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/round_line" />
+
+        <LinearLayout
+            android:id="@+id/lyNowPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="当前密码"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/size_16" />
+
+            <EditText
+                android:id="@+id/edoldPass"
+                style="@style/edittextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入6位以上密码"
+                android:inputType="textPassword"
+                android:padding="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lyPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="手机号"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/size_16" />
+
+            <EditText
+                android:id="@+id/edPhone"
+                style="@style/edittextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入你的手机号"
+                android:inputType="phone"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewline2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/round_line" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/round_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="新密码"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/size_16" />
+
+        <EditText
+            android:id="@+id/edNewPass"
+            style="@style/edittextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入6位以上密码"
+            android:inputType="textPassword"
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/round_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="确认密码"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/size_16" />
+
+        <EditText
+            android:id="@+id/edNewPass2"
+            style="@style/edittextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请重复输入一遍"
+            android:inputType="textPassword"
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/round_line" />
+
+    <TextView
+        android:id="@+id/nextBtn"
+        style="@style/buttonStyle"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sure"/>
+
+</LinearLayout>

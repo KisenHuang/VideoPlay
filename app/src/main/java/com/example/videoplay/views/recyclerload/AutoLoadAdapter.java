@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.videoplay.utils.LogUtil;
 import com.example.videoplay.views.recyclerload.ERecyclerView.OnItemClickListener;
 
 import java.util.ArrayList;
@@ -22,24 +23,20 @@ public abstract class AutoLoadAdapter<T> extends RecyclerView.Adapter<ItemClickV
     protected List<Object> mHeaderList;
 
     protected Context context;
-    /**
-     * 数据adapter
-     */
-    private boolean mIsHeaderShow;
-
-    private boolean mIsFooterShow;
-
-    private View mHeaderView;
-
-    private View mFooterView;
-    private OnItemClickListener onItemClickListener;
 
     protected LayoutInflater mInflater;
+
+    private boolean mIsHeaderShow;
+    private boolean mIsFooterShow;
+    private View mHeaderView;
+    private View mFooterView;
+    private OnItemClickListener onItemClickListener;
 
     public AutoLoadAdapter(Context context) {
         this.context = context;
         mList = new ArrayList<>();
         mIsHeaderShow = false;
+        mIsFooterShow = false;
         mInflater = LayoutInflater.from(context);
     }
 
@@ -120,19 +117,6 @@ public abstract class AutoLoadAdapter<T> extends RecyclerView.Adapter<ItemClickV
         this.onItemClickListener = onItemClickListener;
     }
 
-    public class FooterViewHolder extends ItemClickViewHolder {
-
-        public FooterViewHolder(View itemView) {
-            super(itemView);
-        }
-    }
-
-    public class HeaderViewHolder extends ItemClickViewHolder {
-        public HeaderViewHolder(View itemView) {
-            super(itemView);
-        }
-    }
-
     @Override
     public void onBindViewHolder(ItemClickViewHolder holder, int position) {
         int viewType = getItemViewType(position);
@@ -170,5 +154,18 @@ public abstract class AutoLoadAdapter<T> extends RecyclerView.Adapter<ItemClickV
 
     public void addFooterView(View footer) {
         mFooterView = footer;
+    }
+
+    public class FooterViewHolder extends ItemClickViewHolder {
+
+        public FooterViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    public class HeaderViewHolder extends ItemClickViewHolder {
+        public HeaderViewHolder(View itemView) {
+            super(itemView);
+        }
     }
 }
